@@ -1,0 +1,26 @@
+# Build outputs
+build/
+dist/
+*.min.js
+*.min.css
+
+# Dependencies
+node_modules/
+
+# Generated files
+coverage/
+*.tsbuildinfo
+
+# Config files that should maintain their format
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Markdown files (optional - remove if you want prettier to format markdown)
+*.md
+
+# Public assets
+public/
+
+# Logs
+*.log
