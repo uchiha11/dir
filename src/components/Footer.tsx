@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer className={`footer ${isDark ? 'dark' : 'light'}`}>
       <div className="footer-content">
-        <span>© 2024 Directed by Dinesu</span>
+        <span>© 2025 Dinesu Directs</span>
         <div className="social-links">
           <a href="https://instagram.com/dinesu7" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
         </div>

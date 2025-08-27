@@ -26,7 +26,7 @@ const HomeSection: React.FC = () => {
             <span className="stat-label">MUSIC VIDEOS</span>
           </div>
           <div className="stat">
-            <span className="stat-number">50M+</span>
+            <span className="stat-number">100M+</span>
             <span className="stat-label">VIEWS</span>
           </div>
         </div>
