@@ -267,26 +267,34 @@ const WorkSection: React.FC = () => {
         ) : (
           videos.map((video) => (
             <div key={video.videoId} className="work-item">
-              <div className="work-video">
-                <iframe
-                  width="100%"
-                  height="315"
-                  src={`https://www.youtube.com/embed/${video.videoId}`}
-                  title={video.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="work-info">
-                <h3>{video.title}</h3>
-                <p>
-                  {formatDate(video.publishedAt)}{formatViewCount(video.viewCount) && ` • ${formatViewCount(video.viewCount)}`}
-                </p>
-                <span className="work-role">
-                  Music Video
-                </span>
-              </div>
+              <a
+                href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+              >
+                <div className="work-video">
+                  <iframe
+                    width="100%"
+                    height="315"
+                    src={`https://www.youtube.com/embed/${video.videoId}?modestbranding=1&rel=0&showinfo=0&controls=1`}
+                    title={video.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    style={{ pointerEvents: 'none' }}
+                  ></iframe>
+                </div>
+                <div className="work-info">
+                  <h3>{video.title}</h3>
+                  <p>
+                    {formatDate(video.publishedAt)}{formatViewCount(video.viewCount) && ` • ${formatViewCount(video.viewCount)}`}
+                  </p>
+                  <span className="work-role">
+                    Music Video
+                  </span>
+                </div>
+              </a>
             </div>
           ))
         )}
