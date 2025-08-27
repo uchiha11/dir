@@ -45,32 +45,8 @@ const HomeSection: React.FC = () => {
     const autoChangeInterval = setInterval(() => {
       setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoIds.length);
     }, 30000); // 30 seconds
-
-    let isScrolling = false;
-    let scrollTimeout: NodeJS.Timeout;
-
-    const handleScroll = () => {
-      if (!isScrolling) {
-        isScrolling = true;
-        // Cycle to next video on scroll
-        setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoIds.length);
-        
-        // Clear existing timeout
-        clearTimeout(scrollTimeout);
-        
-        // Reset scrolling flag after 1 second to prevent rapid changes
-        scrollTimeout = setTimeout(() => {
-          isScrolling = false;
-        }, 1000);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    
     return () => {
       clearInterval(autoChangeInterval);
-      clearTimeout(scrollTimeout);
-      window.removeEventListener('scroll', handleScroll);
     };
   }, [videoIds.length]);
 
