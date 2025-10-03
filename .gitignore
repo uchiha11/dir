@@ -105,6 +105,9 @@ dist
 # Gatsby files
 .cache/
 public
+# Allow specific files in public (e.g. CRA's index.html and CNAME)
+!public/index.html
+!public/CNAME
 
 # Storybook build outputs
 .out
